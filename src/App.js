@@ -11,7 +11,7 @@ const item = {
 }
 
 class ShopItemClass extends React.Component {
-  render() {
+  render({ item }) {
     return (
       <div class="main-content">
         <h2>{ item.brand }</h2>
