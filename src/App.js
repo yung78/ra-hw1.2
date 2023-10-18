@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/main.css';
 
-const item = {
+const items = {
   brand: 'Tiger of Sweden',
   title: 'Leonard coat',
   description: 'Minimalistic coat in cotton-blend',
@@ -11,19 +11,21 @@ const item = {
 }
 
 class ShopItemClass extends React.Component {
-  render({ item }) {
+  
+  render() {
+    const { item } = this.props
     return (
-      <div class="main-content">
+      <div className="main-content">
         <h2>{ item.brand }</h2>
         <h1>{ item.title }</h1>
         <h3>{ item.description }</h3>
-        <div class="description">{ item.descriptionFull }</div>
-        <div class="highlight-window mobile">
-          <div class="highlight-overlay"></div>
+        <div className="description">{ item.descriptionFull }</div>
+        <div className="highlight-window mobile">
+          <div className="highlight-overlay"></div>
         </div>
-        <div class="divider"></div>
-        <div class="purchase-info">
-          <div class="price">{ item.currency+item.price+'.00' }</div>
+        <div className="divider"></div>
+        <div className="purchase-info">
+          <div className="price">{ item.currency+item.price+'.00' }</div>
           <button>Добавить в корзину</button>
         </div>
       </div>
@@ -41,7 +43,7 @@ function App() {
       <div className='highlight-overlay'></div>
     </div>
     <div className="window">
-      <ShopItemClass item={item} />
+      <ShopItemClass item={items} />
     </div>
   </div>
   );
